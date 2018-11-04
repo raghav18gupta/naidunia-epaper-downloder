@@ -5,4 +5,4 @@ This script is **only for linux.**
 
 You need to install **PyPDF2** on by **`pip install PyPDF2`**.
 
-Join channel on [Telegram](t.me/NaiDunia)
+Join channel on **@NaiDunia**
