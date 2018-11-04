@@ -2,4 +2,4 @@
 This solution is dedicated to my dad.
 This script is **only for linux.**
 You need to install **PyPDF2** on by **`pip install PyPDF2`**.
-join t.me/NaiDunia
+Join **t.me/NaiDunia**
