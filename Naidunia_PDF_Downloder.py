@@ -1,8 +1,10 @@
-import os
+from telegram.error import NetworkError, Unauthorized
+import telegram
 import datetime
-import PyPDF2
 import requests
+import PyPDF2
 import subprocess
+import os
 
 merger = PyPDF2.PdfFileMerger()
 today = datetime.datetime.now()
@@ -37,10 +39,24 @@ while True:
 		print(e)
 		print(f'Total {page} pages')
 		break
+	if page == 2:
+		break
 
 print('Merging PDF')
 
-merger.write(today.strftime('%d%m%Y')+'_Indore.pdf')
+# os.chdir('/home/raghav/Desktop')
+final_file = today.strftime('%d%m%Y')+'_Indore.pdf'
+merger.write(final_file)
+
+
+# Telegram Code
+print('Uploading in Telegram')
+token = 'i_wouldnt reveal'
+cid = 0 # its another private number
+bot = telegram.Bot(token)
+update_id = bot.get_updates()[0].update_id
+bot.send_document(chat_id=cid, document=open(final_file, 'rb'), timeout=2000)
 subprocess.Popen(['rm', '-rf', f'{dirr}/temp'])
+subprocess.Popen(['rm', '-rf', final_file])
 
 print('Done... Join t.me/NaiDunia')
