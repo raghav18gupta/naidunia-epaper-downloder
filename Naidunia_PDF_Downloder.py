@@ -38,9 +38,7 @@ while True:
 	except BaseException as e:
 		print(e)
 		print(f'Total {page} pages')
-		break
-	if page == 2:
-		break
+		break	
 
 print('Merging PDF')
 
@@ -51,7 +49,7 @@ merger.write(final_file)
 
 # Telegram Code
 print('Uploading in Telegram')
-token = 'i_wouldnt reveal'
+token = 'i_wouldnt_reveal'
 cid = 0 # its another private number
 bot = telegram.Bot(token)
 update_id = bot.get_updates()[0].update_id
