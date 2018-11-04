@@ -40,7 +40,6 @@ while True:
 
 print('Merging PDF')
 
-os.chdir('/home/raghav/Desktop')
 merger.write(today.strftime('%d%m%Y')+'_Indore.pdf')
 subprocess.Popen(['rm', '-rf', f'{dirr}/temp'])
 
