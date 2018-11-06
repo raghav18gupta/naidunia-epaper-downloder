@@ -38,21 +38,18 @@ while True:
 	except BaseException as e:
 		print(e)
 		print(f'Total {page} pages')
-		break	
+		break
 
 print('Merging PDF')
-
-# os.chdir('/home/raghav/Desktop')
-final_file = today.strftime('%d%m%Y')+'_Indore.pdf'
+final_file = today.strftime('%d%m%Y')+'_Naidunia.pdf'
 merger.write(final_file)
 
 
 # Telegram Code
 print('Uploading in Telegram')
-token = 'i_wouldnt_reveal'
-cid = 0 # its another private number
+token = 'private_token_string'
+cid = 0	#channel id
 bot = telegram.Bot(token)
-update_id = bot.get_updates()[0].update_id
 bot.send_document(chat_id=cid, document=open(final_file, 'rb'), timeout=2000)
 subprocess.Popen(['rm', '-rf', f'{dirr}/temp'])
 subprocess.Popen(['rm', '-rf', final_file])
