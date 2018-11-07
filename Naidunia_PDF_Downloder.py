@@ -29,7 +29,10 @@ while True:
 	try:
 		r = requests.get(url, stream=True)
 		if r.status_code == 404:
-			raise Exception("That's the end")
+			url = f'https://naiduniaepaper.jagran.com/epaperimages/{dayy}/indore/{ngr}rtm-pg{page}-0.pdf'
+			r = requests.get(url, stream=True)
+			if r.status_code == 404:
+				raise Exception("That's the end")
 
 		with open(path, 'ab') as fd:
 			for chunk in r.iter_content(1000):
