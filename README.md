@@ -14,3 +14,5 @@ Join channel on Telegram: **@NaiDunia**
 - It downloads all pages of newspaper, which are separate. 
 - Then it merge them.
 - And finally uploads to telegram.
+
+### Deployed on Heroku: using [this](https://github.com/michaelkrukov/heroku-python-script)
