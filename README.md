@@ -1,4 +1,4 @@
-# naidunia-epaper-downloder
+# naidunia-epaper-downloader
 
 This solution is dedicated to my dad. This script works well on **linux.**
 
