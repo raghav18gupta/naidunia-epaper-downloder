@@ -3,8 +3,8 @@
 This solution is dedicated to my dad. This script works well on **linux.**
 
 ## Dependencies
--	**PyPDF2** : **`pip install PyPDF2`**.
--	**python-telegram-bot**: **`pip install python-telegram-bot`**
+-	**PyPDF2** : `pip install PyPDF2`.
+-	**python-telegram-bot**: `pip install python-telegram-bot`
 
 Join channel on Telegram: [**@NaiDunia**](http://t.me/NaiDunia)
 
