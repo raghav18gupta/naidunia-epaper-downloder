@@ -55,9 +55,10 @@ def worker():
 
     # Telegram Code
     print('Uploading in Telegram')
-    token = '707270864:AAFcLZF_xkYpAlEnyI6AU6QbTo599Zcb-o0'
+    token = 'token-string'
+    chatid = -0000  # channel-id
     bot = telegram.Bot(token)
-    bot.send_document(chat_id=-1001133680323,
+    bot.send_document(chat_id=chatid,
                       document=open(final_file, 'rb'), timeout=2000)
     subprocess.Popen(['rm', '-rf', f'{dirr}/temp'])
     subprocess.Popen(['rm', '-rf', final_file])
