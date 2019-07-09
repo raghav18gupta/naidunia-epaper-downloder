@@ -7,7 +7,7 @@ import subprocess
 import os
 
 
-def a():
+def worker():
     merger = PyPDF2.PdfFileMerger()
     today = datetime.datetime.now()
     yesterday = today - datetime.timedelta(days=1)
@@ -50,24 +50,18 @@ def a():
             break
 
     print('Merging PDF')
-    final_file = today.strftime('%d%m%Y') + '_Naidunia.pdf'
+    final_file = today.strftime('%d-%m-%Y') + '_Naidunia.pdf'
     merger.write(final_file)
 
     # Telegram Code
     print('Uploading in Telegram')
-    cid = 0 # receiver's chat id
-    token = 'private-token-string give by bot-father'
+    token = '707270864:AAFcLZF_xkYpAlEnyI6AU6QbTo599Zcb-o0'
     bot = telegram.Bot(token)
-    bot.send_document(chat_id=-cid,
+    bot.send_document(chat_id=-1001133680323,
                       document=open(final_file, 'rb'), timeout=2000)
     subprocess.Popen(['rm', '-rf', f'{dirr}/temp'])
     subprocess.Popen(['rm', '-rf', final_file])
 
     print('Done... Join t.me/NaiDunia')
 
-
-while True:
-    noww = [int(x) for x in time.strftime(
-        "%H:%M:%S", time.localtime()).split(':')]
-    if noww[0] - 6 == 0 and noww[1] - 0 == 0 and noww[2] in range(0, 15):
-        a()
+worker()
